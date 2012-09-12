@@ -45,11 +45,11 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
       'grid_4_top_center_right' => NULL,
       'grid_4_top_right' => NULL,
       'grid_8_left' => array(
-        'region_title' => 'News',
+        'region_title' => 'Nyheder',
         'region_collapsed' => 1,
       ),
       'grid_8_right' => array(
-        'region_title' => 'Events',
+        'region_title' => 'Arrangementer',
         'region_collapsed' => 1,
       ),
       'grid_4_bottom_left' => NULL,
@@ -113,9 +113,9 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     $pane->configuration = array(
       'override_pager_settings' => 0,
       'use_pager' => 0,
-      'nodes_per_page' => '5',
+      'nodes_per_page' => '4',
       'pager_id' => '0',
-      'offset' => '0',
+      'offset' => '1',
       'more_link' => 1,
       'feed_icons' => 0,
       'panel_args' => 0,
@@ -123,7 +123,7 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
       'args' => '',
       'url' => 'news',
       'display' => 'ctools_context_teaser_list',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
     );
     $pane->cache = array(
@@ -164,8 +164,8 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
       'args' => '',
       'url' => 'events',
       'display' => 'ctools_context_teaser_list',
-      'override_title' => 0,
-      'override_title_text' => 'Calendar',
+      'override_title' => 1,
+      'override_title_text' => '',
     );
     $pane->cache = array(
       'method' => 'rules',
@@ -267,6 +267,7 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
       'search' => NULL,
       'login' => NULL,
       'footer' => NULL,
+      'search-login' => NULL,
     ),
     'content' => array(
       'style' => '-1',
@@ -282,103 +283,6 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-5';
     $pane->panel = 'content';
-    $pane->type = 'block';
-    $pane->subtype = 'search-form';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Search here',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'grid-11-left',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $display->content['new-5'] = $pane;
-    $display->panels['content'][0] = 'new-5';
-    $pane = new stdClass();
-    $pane->pid = 'new-6';
-    $pane->panel = 'content';
-    $pane->type = 'block';
-    $pane->subtype = 'user-login';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'grid-4-right',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $display->content['new-6'] = $pane;
-    $display->panels['content'][1] = 'new-6';
-    $pane = new stdClass();
-    $pane->pid = 'new-7';
-    $pane->panel = 'content';
-    $pane->type = 'block';
-    $pane->subtype = 'ding_user_frontend-ding-user-loan-number';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-      'style' => 'default',
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'grid-4-right',
-    );
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $display->content['new-7'] = $pane;
-    $display->panels['content'][2] = 'new-7';
-    $pane = new stdClass();
-    $pane->pid = 'new-8';
-    $pane->panel = 'content';
-    $pane->type = 'block';
-    $pane->subtype = 'menu_block-2';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'grid-4-right',
-    );
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $display->content['new-8'] = $pane;
-    $display->panels['content'][3] = 'new-8';
-    $pane = new stdClass();
-    $pane->pid = 'new-9';
-    $pane->panel = 'content';
     $pane->type = 'page_breadcrumb';
     $pane->subtype = 'page_breadcrumb';
     $pane->shown = TRUE;
@@ -393,12 +297,12 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
       'css_class' => 'grid-clear-both',
     );
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 0;
     $pane->locks = '';
-    $display->content['new-9'] = $pane;
-    $display->panels['content'][4] = 'new-9';
+    $display->content['new-5'] = $pane;
+    $display->panels['content'][0] = 'new-5';
     $pane = new stdClass();
-    $pane->pid = 'new-10';
+    $pane->pid = 'new-6';
     $pane->panel = 'content';
     $pane->type = 'page_messages';
     $pane->subtype = 'page_messages';
@@ -414,12 +318,12 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
       'css_class' => 'grid-clear-both',
     );
     $pane->extras = array();
-    $pane->position = 5;
+    $pane->position = 1;
     $pane->locks = '';
-    $display->content['new-10'] = $pane;
-    $display->panels['content'][5] = 'new-10';
+    $display->content['new-6'] = $pane;
+    $display->panels['content'][1] = 'new-6';
     $pane = new stdClass();
-    $pane->pid = 'new-11';
+    $pane->pid = 'new-7';
     $pane->panel = 'content';
     $pane->type = 'page_content';
     $pane->subtype = 'page_content';
@@ -439,19 +343,19 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
       'css_class' => 'grid-clear-both',
     );
     $pane->extras = array();
-    $pane->position = 6;
+    $pane->position = 2;
     $pane->locks = '';
-    $display->content['new-11'] = $pane;
-    $display->panels['content'][6] = 'new-11';
+    $display->content['new-7'] = $pane;
+    $display->panels['content'][2] = 'new-7';
     $pane = new stdClass();
-    $pane->pid = 'new-12';
+    $pane->pid = 'new-8';
     $pane->panel = 'footer';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-footer-menu-1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '',
     );
     $pane->cache = array();
@@ -465,17 +369,17 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = '';
-    $display->content['new-12'] = $pane;
-    $display->panels['footer'][0] = 'new-12';
+    $display->content['new-8'] = $pane;
+    $display->panels['footer'][0] = 'new-8';
     $pane = new stdClass();
-    $pane->pid = 'new-13';
+    $pane->pid = 'new-9';
     $pane->panel = 'footer';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-footer-menu-2';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '',
     );
     $pane->cache = array();
@@ -489,17 +393,17 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = '';
-    $display->content['new-13'] = $pane;
-    $display->panels['footer'][1] = 'new-13';
+    $display->content['new-9'] = $pane;
+    $display->panels['footer'][1] = 'new-9';
     $pane = new stdClass();
-    $pane->pid = 'new-14';
+    $pane->pid = 'new-10';
     $pane->panel = 'footer';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-footer-menu-3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '',
     );
     $pane->cache = array();
@@ -513,17 +417,17 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = '';
-    $display->content['new-14'] = $pane;
-    $display->panels['footer'][2] = 'new-14';
+    $display->content['new-10'] = $pane;
+    $display->panels['footer'][2] = 'new-10';
     $pane = new stdClass();
-    $pane->pid = 'new-15';
+    $pane->pid = 'new-11';
     $pane->panel = 'footer';
     $pane->type = 'block';
     $pane->subtype = 'menu-menu-footer-menu-4';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '',
     );
     $pane->cache = array();
@@ -537,10 +441,10 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = '';
-    $display->content['new-15'] = $pane;
-    $display->panels['footer'][3] = 'new-15';
+    $display->content['new-11'] = $pane;
+    $display->panels['footer'][3] = 'new-11';
     $pane = new stdClass();
-    $pane->pid = 'new-16';
+    $pane->pid = 'new-12';
     $pane->panel = 'header';
     $pane->type = 'pane_header';
     $pane->subtype = 'pane_header';
@@ -553,15 +457,15 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'grid-6-left',
+      'css_class' => 'grid-8-left',
     );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = '';
-    $display->content['new-16'] = $pane;
-    $display->panels['header'][0] = 'new-16';
+    $display->content['new-12'] = $pane;
+    $display->panels['header'][0] = 'new-12';
     $pane = new stdClass();
-    $pane->pid = 'new-17';
+    $pane->pid = 'new-13';
     $pane->panel = 'header';
     $pane->type = 'block';
     $pane->subtype = 'menu_block-1';
@@ -577,13 +481,110 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'grid-8-center',
+      'css_class' => 'grid-8-right',
     );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
+    $display->content['new-13'] = $pane;
+    $display->panels['header'][1] = 'new-13';
+    $pane = new stdClass();
+    $pane->pid = 'new-14';
+    $pane->panel = 'search-login';
+    $pane->type = 'block';
+    $pane->subtype = 'search-form';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Søge her',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'grid-11-left',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-14'] = $pane;
+    $display->panels['search-login'][0] = 'new-14';
+    $pane = new stdClass();
+    $pane->pid = 'new-15';
+    $pane->panel = 'search-login';
+    $pane->type = 'block';
+    $pane->subtype = 'user-login';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Log ind',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'grid-4-right',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-15'] = $pane;
+    $display->panels['search-login'][1] = 'new-15';
+    $pane = new stdClass();
+    $pane->pid = 'new-16';
+    $pane->panel = 'search-login';
+    $pane->type = 'block';
+    $pane->subtype = 'system-user-menu';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Bruger menu',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'grid-4-right',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $display->content['new-16'] = $pane;
+    $display->panels['search-login'][2] = 'new-16';
+    $pane = new stdClass();
+    $pane->pid = 'new-17';
+    $pane->panel = 'search-login';
+    $pane->type = 'block';
+    $pane->subtype = 'ding_user_frontend-ding-user-loan-number';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+      'style' => 'default',
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'grid-4-right grid-clear-right',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
     $display->content['new-17'] = $pane;
-    $display->panels['header'][1] = 'new-17';
+    $display->panels['search-login'][3] = 'new-17';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
