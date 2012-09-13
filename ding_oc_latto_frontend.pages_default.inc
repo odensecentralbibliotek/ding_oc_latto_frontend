@@ -28,7 +28,7 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'full_8_8_stacked';
+  $display->layout = 'bottom_full_8_8_stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -64,6 +64,7 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
         'region_title' => 'Arrangementer',
         'region_collapsed' => 1,
       ),
+      'grid_16_bottom_full' => NULL,
     ),
     'grid_10_left' => array(
       'style' => 'collapsible',
@@ -84,7 +85,7 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-1';
-    $pane->panel = 'grid_16_top_full';
+    $pane->panel = 'grid_16_bottom_full';
     $pane->type = 'carousel';
     $pane->subtype = 'carousel';
     $pane->shown = TRUE;
@@ -102,7 +103,7 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     $pane->position = 0;
     $pane->locks = '';
     $display->content['new-1'] = $pane;
-    $display->panels['grid_16_top_full'][0] = 'new-1';
+    $display->panels['grid_16_bottom_full'][0] = 'new-1';
     $pane = new stdClass();
     $pane->pid = 'new-2';
     $pane->panel = 'grid_8_left';
@@ -497,7 +498,7 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => 'Søg her',
+      'override_title_text' => 'Søge her',
     );
     $pane->cache = array();
     $pane->style = array(
