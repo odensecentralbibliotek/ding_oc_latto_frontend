@@ -497,7 +497,7 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => 'Søge her',
+      'override_title_text' => 'Søg her',
     );
     $pane->cache = array();
     $pane->style = array(
