@@ -139,7 +139,10 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
       'style' => 'default',
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = '';
@@ -458,7 +461,7 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'grid-8-left',
+      'css_class' => 'grid-3-left',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -482,7 +485,7 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'grid-8-right',
+      'css_class' => 'grid-13-right',
     );
     $pane->extras = array();
     $pane->position = 1;
@@ -498,7 +501,7 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => 'Søge her',
+      'override_title_text' => 'Søg her',
     );
     $pane->cache = array();
     $pane->style = array(
