@@ -1,7 +1,7 @@
 name = Ding OC Latto Frontend
 description = Panels & views configuration for Ding Latto based sites
 core = 7.x
-package = Ding!
+package = OC
 php = 5.2.4
 version = 7.x-1.1
 dependencies[] = ding_event
