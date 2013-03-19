@@ -13,7 +13,7 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_ding_frontpage_panel_context_1';
+  $handler->name = 'odense_page_ding_frontpage_panel_context_1';
   $handler->task = 'page';
   $handler->subtask = 'ding_frontpage';
   $handler->handler = 'panel_context';
@@ -298,12 +298,12 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
-  $export['page_ding_frontpage_panel_context_1'] = $handler;
+  $export['odense_page_ding_frontpage_panel_context_1'] = $handler;
 
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'site_template_panel_context_1';
+  $handler->name = 'odense_site_template_panel_context_1';
   $handler->task = 'site_template';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
@@ -835,12 +835,12 @@ ting',
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
-  $export['site_template_panel_context_1'] = $handler;
+  $export['odense_site_template_panel_context_1'] = $handler;
 
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'ting_collection_panel_context_1';
+  $handler->name = 'odense_ting_collection_panel_context_1';
   $handler->task = 'ting_collection';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
@@ -986,12 +986,12 @@ ting',
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-18';
   $handler->conf['display'] = $display;
-  $export['ting_collection_panel_context_1'] = $handler;
+  $export['odense_ting_collection_panel_context_1'] = $handler;
 
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'ting_object_panel_context_1';
+  $handler->name = 'odense_ting_object_panel_context_1';
   $handler->task = 'ting_object';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
@@ -1162,7 +1162,7 @@ ting',
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-22';
   $handler->conf['display'] = $display;
-  $export['ting_object_panel_context_1'] = $handler;
+  $export['odense_ting_object_panel_context_1'] = $handler;
 
   return $export;
 }
