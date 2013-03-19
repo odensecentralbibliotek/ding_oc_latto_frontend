@@ -40,3 +40,77 @@ function ding_oc_latto_frontend_page_manager_load_task_handlers_alter(&$handlers
   }
 }
 
+/**
+ * Implements hook_menu_block_blocks().
+ */
+function ding_oc_latto_frontend_menu_block_blocks() {
+  // The array key is the block delta used by menu block.
+  return array(
+    'ding_oc_latto_frontend-1' => array(
+      'menu_name'   => 'main-menu',
+      'parent_mlid' => 0,
+      'title_link'  => 0,
+      'admin_title' => 'Menu block main',
+      'level'       => 1,
+      'follow'      => 0,
+      'depth'       => 1,
+      'expanded'    => 0,
+      'sort'        => 0,
+    ),
+    'ding_oc_latto_frontend-2' => array(
+      'menu_name'   => 'main-menu',
+      'parent_mlid' => 0,
+      'title_link'  => 0,
+      'admin_title' => '',
+      'level'       => 1,
+      'follow'      => 0,
+      'depth'       => 0,
+      'expanded'    => 0,
+      'sort'        => 0,
+    ),
+    'ding_oc_latto_frontend-3' => array(
+      'menu_name'   => 'menu-footer-menu-2',
+      'parent_mlid' => 0,
+      'title_link'  => 0,
+      'admin_title' => 'Netbiblioteket menu block',
+      'level'       => 1,
+      'follow'      => 0,
+      'depth'       => 1,
+      'expanded'    => 0,
+      'sort'        => 0,
+    ),
+    'ding_oc_latto_frontend-4' => array(
+      'menu_name'   => 'menu-footer-menu-4',
+      'parent_mlid' => 0,
+      'title_link'  => 0,
+      'admin_title' => 'om biblioteket menu block',
+      'level'       => 1,
+      'follow'      => 0,
+      'depth'       => 1,
+      'expanded'    => 0,
+      'sort'        => 0,
+    ),
+    'ding_oc_latto_frontend-5' => array(
+      'menu_name'   => 'menu-footer-menu-3',
+      'parent_mlid' => 0,
+      'title_link'  => 0,
+      'admin_title' => 'om hjemmesiden menu block',
+      'level'       => 1,
+      'follow'      => 0,
+      'depth'       => 1,
+      'expanded'    => 0,
+      'sort'        => 0,
+    ),
+    'ding_oc_latto_frontend-6' => array(
+      'menu_name'   => 'menu-footer-menu-1',
+      'parent_mlid' => 0,
+      'title_link'  => 0,
+      'admin_title' => 'tilbudet fra biblioteket menu block',
+      'level'       => 1,
+      'follow'      => 0,
+      'depth'       => 1,
+      'expanded'    => 0,
+      'sort'        => 0,
+    ),
+  );
+}

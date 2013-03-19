@@ -17,7 +17,7 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
   $handler->task = 'page';
   $handler->subtask = 'ding_frontpage';
   $handler->handler = 'panel_context';
-  $handler->weight = -1;
+  $handler->weight = -30;
   $handler->conf = array(
     'title' => 'Ding Odense frontpage',
     'no_blocks' => 0,
@@ -26,9 +26,11 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'front',
   );
   $display = new panels_display();
-  $display->layout = 'bottom_full_8_8_stacked';
+  $display->layout = 'stacked_8_4_4_reverse';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -54,7 +56,6 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
       ),
       'grid_4_bottom_left' => NULL,
       'grid_4_bottom_center_left' => NULL,
-      'grid_4_bottom_center_right' => NULL,
       'grid_4_bottom_right' => NULL,
       'grid_10_left' => array(
         'region_title' => 'Nyheder',
@@ -65,6 +66,10 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
         'region_collapsed' => 1,
       ),
       'grid_16_bottom_full' => NULL,
+      'grid_12_left' => NULL,
+      'grid_4_right' => NULL,
+      'grid_8_bottom_left' => NULL,
+      'grid_4_bottom_center_right' => NULL,
     ),
     'grid_10_left' => array(
       'style' => 'collapsible',
@@ -78,6 +83,12 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     'grid_8_right' => array(
       'style' => 'collapsible',
     ),
+    'grid_8_bottom_left' => array(
+      'style' => 'default',
+    ),
+    'grid_4_bottom_center_right' => array(
+      'style' => 'default',
+    ),
   );
   $display->cache = array();
   $display->title = '';
@@ -85,58 +96,25 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-1';
-    $pane->panel = 'grid_16_bottom_full';
-    $pane->type = 'carousel';
-    $pane->subtype = 'carousel';
+    $pane->panel = 'grid_12_left';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ding_tabroll-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = '';
-    $display->content['new-1'] = $pane;
-    $display->panels['grid_16_bottom_full'][0] = 'new-1';
-    $pane = new stdClass();
-    $pane->pid = 'new-2';
-    $pane->panel = 'grid_8_left';
-    $pane->type = 'views';
-    $pane->subtype = 'ding_news';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '4',
-      'pager_id' => '0',
-      'offset' => '1',
-      'more_link' => 1,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '',
-      'url' => 'news',
-      'display' => 'ctools_context_teaser_list',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
+    $pane->configuration = array();
     $pane->cache = array(
       'method' => 'rules',
       'settings' => array(
-        'granularity' => 'context',
+        'granularity' => 'none',
         'language' => 1,
-        'cache_key' => 'panel_context:page-ding_frontpage:page_ding_frontpage_panel_context',
+        'language_content' => 1,
+        'advanced' => array(),
+        'cache_key' => '50e6dc83a64d3',
+        'substitute' => 0,
+        'new' => TRUE,
       ),
     );
     $pane->style = array(
-      'style' => 'default',
       'settings' => NULL,
     );
     $pane->css = array(
@@ -145,56 +123,41 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     );
     $pane->extras = array();
     $pane->position = 0;
-    $pane->locks = '';
-    $display->content['new-2'] = $pane;
-    $display->panels['grid_8_left'][0] = 'new-2';
+    $pane->locks = array();
+    $display->content['new-1'] = $pane;
+    $display->panels['grid_12_left'][0] = 'new-1';
     $pane = new stdClass();
-    $pane->pid = 'new-3';
-    $pane->panel = 'grid_8_right';
-    $pane->type = 'views';
-    $pane->subtype = 'ding_event';
+    $pane->pid = 'new-2';
+    $pane->panel = 'grid_4_bottom_center_right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ding_event-ding_event_date_list_icons';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '6',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 1,
-      'feed_icons' => 1,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '',
-      'url' => 'events',
-      'display' => 'ctools_context_teaser_list',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
+    $pane->configuration = array();
     $pane->cache = array(
       'method' => 'rules',
       'settings' => array(
         'granularity' => 'none',
         'language' => 1,
-        'cache_key' => 'panel_context:page-ding_frontpage:page_ding_frontpage_panel_context',
+        'language_content' => 1,
+        'advanced' => array(),
+        'cache_key' => '50e6deb1cab8b',
+        'substitute' => 0,
+        'new' => TRUE,
       ),
     );
     $pane->style = array(
-      'style' => 'default',
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'ding-event-teaser-list',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
-    $pane->locks = '';
-    $display->content['new-3'] = $pane;
-    $display->panels['grid_8_right'][0] = 'new-3';
+    $pane->locks = array();
+    $display->content['new-2'] = $pane;
+    $display->panels['grid_4_bottom_center_right'][0] = 'new-2';
     $pane = new stdClass();
-    $pane->pid = 'new-4';
-    $pane->panel = 'grid_8_right';
+    $pane->pid = 'new-3';
+    $pane->panel = 'grid_4_bottom_right';
     $pane->type = 'campaign';
     $pane->subtype = 'campaign';
     $pane->shown = TRUE;
@@ -222,10 +185,116 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = '';
+    $display->content['new-3'] = $pane;
+    $display->panels['grid_4_bottom_right'][0] = 'new-3';
+    $pane = new stdClass();
+    $pane->pid = 'new-4';
+    $pane->panel = 'grid_4_bottom_right';
+    $pane->type = 'block';
+    $pane->subtype = 'finurlig_widget-fffWidget';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+      'style' => 'rounded_corners',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
     $display->content['new-4'] = $pane;
-    $display->panels['grid_8_right'][1] = 'new-4';
+    $display->panels['grid_4_bottom_right'][1] = 'new-4';
+    $pane = new stdClass();
+    $pane->pid = 'new-5';
+    $pane->panel = 'grid_4_right';
+    $pane->type = 'menu_tree';
+    $pane->subtype = 'menu-kviklinks';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'menu_name' => 'menu-kviklinks',
+      'parent_mlid' => 'menu-kviklinks:0',
+      'title_link' => 0,
+      'admin_title' => '',
+      'level' => '1',
+      'follow' => 0,
+      'depth' => 0,
+      'expanded' => 0,
+      'sort' => 0,
+      'override_title' => 1,
+      'override_title_text' => 'Kom let til...',
+    );
+    $pane->cache = array(
+      'method' => 'rules',
+      'settings' => array(
+        'granularity' => 'none',
+        'language' => 1,
+        'language_content' => 1,
+        'advanced' => array(),
+        'cache_key' => '50e6de8f5cb22',
+        'substitute' => 0,
+        'new' => TRUE,
+      ),
+    );
+    $pane->style = array(
+      'settings' => NULL,
+      'style' => 'default',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-5'] = $pane;
+    $display->panels['grid_4_right'][0] = 'new-5';
+    $pane = new stdClass();
+    $pane->pid = 'new-6';
+    $pane->panel = 'grid_8_bottom_left';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'nyheder til forsiden',
+      'title' => 'Nyheder',
+      'body' => '',
+      'format' => 'ding_wysiwyg',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-6'] = $pane;
+    $display->panels['grid_8_bottom_left'][0] = 'new-6';
+    $pane = new stdClass();
+    $pane->pid = 'new-7';
+    $pane->panel = 'grid_8_bottom_left';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'ding_news-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-7'] = $pane;
+    $display->panels['grid_8_bottom_left'][1] = 'new-7';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -285,7 +354,7 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-5';
+    $pane->pid = 'new-1';
     $pane->panel = 'content';
     $pane->type = 'page_breadcrumb';
     $pane->subtype = 'page_breadcrumb';
@@ -298,8 +367,8 @@ function ding_oc_latto_frontend_default_page_manager_handlers() {
             'visibility_setting' => '0',
             'paths' => 'search/*
 search
-søg/*
-søg',
+ting/*
+ting',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -307,7 +376,10 @@ søg',
       ),
     );
     $pane->configuration = array();
-    $pane->cache = array();
+    $pane->cache = array(
+      'method' => '0',
+      'settings' => array(),
+    );
     $pane->style = array(
       'settings' => NULL,
     );
@@ -318,10 +390,10 @@ søg',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = '';
-    $display->content['new-5'] = $pane;
-    $display->panels['content'][0] = 'new-5';
+    $display->content['new-1'] = $pane;
+    $display->panels['content'][0] = 'new-1';
     $pane = new stdClass();
-    $pane->pid = 'new-6';
+    $pane->pid = 'new-2';
     $pane->panel = 'content';
     $pane->type = 'page_messages';
     $pane->subtype = 'page_messages';
@@ -339,10 +411,71 @@ søg',
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = '';
-    $display->content['new-6'] = $pane;
-    $display->panels['content'][1] = 'new-6';
+    $display->content['new-2'] = $pane;
+    $display->panels['content'][1] = 'new-2';
     $pane = new stdClass();
-    $pane->pid = 'new-7';
+    $pane->pid = 'new-3';
+    $pane->panel = 'content';
+    $pane->type = 'page_tabs';
+    $pane->subtype = 'page_tabs';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '0',
+            'paths' => 'search/*
+search
+ting/*
+ting',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'type' => 'both',
+      'id' => 'tabs',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array(
+      'method' => 0,
+    );
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $display->content['new-3'] = $pane;
+    $display->panels['content'][2] = 'new-3';
+    $pane = new stdClass();
+    $pane->pid = 'new-4';
+    $pane->panel = 'content';
+    $pane->type = 'block';
+    $pane->subtype = 'print-print-links';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $display->content['new-4'] = $pane;
+    $display->panels['content'][3] = 'new-4';
+    $pane = new stdClass();
+    $pane->pid = 'new-5';
     $pane->panel = 'content';
     $pane->type = 'page_content';
     $pane->subtype = 'page_content';
@@ -362,108 +495,140 @@ søg',
       'css_class' => 'grid-clear-both',
     );
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 4;
     $pane->locks = '';
+    $display->content['new-5'] = $pane;
+    $display->panels['content'][4] = 'new-5';
+    $pane = new stdClass();
+    $pane->pid = 'new-6';
+    $pane->panel = 'footer';
+    $pane->type = 'block';
+    $pane->subtype = 'menu_block-6';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array(
+      'method' => 'rules',
+      'settings' => array(
+        'granularity' => 'none',
+        'language' => 1,
+        'cache_key' => '50bf11a45311a',
+        'new' => TRUE,
+      ),
+    );
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'grid-4-left footer-menu',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-6'] = $pane;
+    $display->panels['footer'][0] = 'new-6';
+    $pane = new stdClass();
+    $pane->pid = 'new-7';
+    $pane->panel = 'footer';
+    $pane->type = 'block';
+    $pane->subtype = 'menu_block-3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array(
+      'method' => 'rules',
+      'settings' => array(
+        'granularity' => 'none',
+        'language' => 1,
+        'cache_key' => '50bf11a45d23b',
+        'new' => TRUE,
+      ),
+    );
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'grid-4-center-left footer-menu',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
     $display->content['new-7'] = $pane;
-    $display->panels['content'][2] = 'new-7';
+    $display->panels['footer'][1] = 'new-7';
     $pane = new stdClass();
     $pane->pid = 'new-8';
     $pane->panel = 'footer';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-footer-menu-1';
+    $pane->subtype = 'menu_block-5';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 0,
       'override_title_text' => '',
     );
-    $pane->cache = array();
+    $pane->cache = array(
+      'method' => 'rules',
+      'settings' => array(
+        'granularity' => 'none',
+        'language' => 1,
+        'cache_key' => '50bf11a46e048',
+        'new' => TRUE,
+      ),
+    );
     $pane->style = array(
       'settings' => NULL,
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'grid-4-left',
+      'css_class' => 'grid-4-center-right footer-menu',
     );
     $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = '';
+    $pane->position = 2;
+    $pane->locks = array();
     $display->content['new-8'] = $pane;
-    $display->panels['footer'][0] = 'new-8';
+    $display->panels['footer'][2] = 'new-8';
     $pane = new stdClass();
     $pane->pid = 'new-9';
     $pane->panel = 'footer';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-footer-menu-2';
+    $pane->subtype = 'menu_block-4';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 0,
       'override_title_text' => '',
     );
-    $pane->cache = array();
+    $pane->cache = array(
+      'method' => 'rules',
+      'settings' => array(
+        'granularity' => 'none',
+        'language' => 1,
+        'cache_key' => '50bf11a4783d2',
+        'new' => TRUE,
+      ),
+    );
     $pane->style = array(
       'settings' => NULL,
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'grid-4-center-left',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = '';
-    $display->content['new-9'] = $pane;
-    $display->panels['footer'][1] = 'new-9';
-    $pane = new stdClass();
-    $pane->pid = 'new-10';
-    $pane->panel = 'footer';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-footer-menu-3';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'grid-4-center-right',
-    );
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = '';
-    $display->content['new-10'] = $pane;
-    $display->panels['footer'][2] = 'new-10';
-    $pane = new stdClass();
-    $pane->pid = 'new-11';
-    $pane->panel = 'footer';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-footer-menu-4';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'grid-4-right',
+      'css_class' => 'grid-4-right footer-menu',
     );
     $pane->extras = array();
     $pane->position = 3;
-    $pane->locks = '';
-    $display->content['new-11'] = $pane;
-    $display->panels['footer'][3] = 'new-11';
+    $pane->locks = array();
+    $display->content['new-9'] = $pane;
+    $display->panels['footer'][3] = 'new-9';
     $pane = new stdClass();
-    $pane->pid = 'new-12';
+    $pane->pid = 'new-10';
     $pane->panel = 'header';
     $pane->type = 'pane_header';
     $pane->subtype = 'pane_header';
@@ -481,10 +646,10 @@ søg',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = '';
-    $display->content['new-12'] = $pane;
-    $display->panels['header'][0] = 'new-12';
+    $display->content['new-10'] = $pane;
+    $display->panels['header'][0] = 'new-10';
     $pane = new stdClass();
-    $pane->pid = 'new-13';
+    $pane->pid = 'new-11';
     $pane->panel = 'header';
     $pane->type = 'block';
     $pane->subtype = 'menu_block-1';
@@ -494,7 +659,18 @@ søg',
       'override_title' => 1,
       'override_title_text' => '',
     );
-    $pane->cache = array();
+    $pane->cache = array(
+      'method' => 'rules',
+      'settings' => array(
+        'granularity' => 'none',
+        'language' => 1,
+        'language_content' => 1,
+        'advanced' => array(),
+        'cache_key' => '514181064dc49',
+        'substitute' => 0,
+        'new' => TRUE,
+      ),
+    );
     $pane->style = array(
       'settings' => NULL,
     );
@@ -505,16 +681,23 @@ søg',
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-13'] = $pane;
-    $display->panels['header'][1] = 'new-13';
+    $display->content['new-11'] = $pane;
+    $display->panels['header'][1] = 'new-11';
     $pane = new stdClass();
-    $pane->pid = 'new-14';
+    $pane->pid = 'new-12';
     $pane->panel = 'search-login';
-    $pane->type = 'block';
-    $pane->subtype = 'search-form';
+    $pane->type = 'search_form';
+    $pane->subtype = 'search_form';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
+      'type' => 'ting_search',
+      'form' => 'advanced',
+      'path_type' => 'default',
+      'path' => 'ting/search',
+      'override_prompt' => 0,
+      'prompt' => '',
+      'context' => 'empty',
       'override_title' => 1,
       'override_title_text' => 'Søg her',
     );
@@ -529,10 +712,37 @@ søg',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-14'] = $pane;
-    $display->panels['search-login'][0] = 'new-14';
+    $display->content['new-12'] = $pane;
+    $display->panels['search-login'][0] = 'new-12';
     $pane = new stdClass();
-    $pane->pid = 'new-15';
+    $pane->pid = 'new-13';
+    $pane->panel = 'search-login';
+    $pane->type = 'block';
+    $pane->subtype = 'search-form';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Søg her',
+    );
+    $pane->cache = array(
+      'method' => '0',
+      'settings' => array(),
+    );
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'grid-11-left',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-13'] = $pane;
+    $display->panels['search-login'][1] = 'new-13';
+    $pane = new stdClass();
+    $pane->pid = 'new-14';
     $pane->panel = 'search-login';
     $pane->type = 'block';
     $pane->subtype = 'user-login';
@@ -542,31 +752,10 @@ søg',
       'override_title' => 1,
       'override_title_text' => 'Log ind',
     );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
+    $pane->cache = array(
+      'method' => '0',
+      'settings' => array(),
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'grid-4-right',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $display->content['new-15'] = $pane;
-    $display->panels['search-login'][1] = 'new-15';
-    $pane = new stdClass();
-    $pane->pid = 'new-16';
-    $pane->panel = 'search-login';
-    $pane->type = 'block';
-    $pane->subtype = 'system-user-menu';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Bruger menu',
-    );
-    $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
@@ -577,10 +766,10 @@ søg',
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-16'] = $pane;
-    $display->panels['search-login'][2] = 'new-16';
+    $display->content['new-14'] = $pane;
+    $display->panels['search-login'][2] = 'new-14';
     $pane = new stdClass();
-    $pane->pid = 'new-17';
+    $pane->pid = 'new-15';
     $pane->panel = 'search-login';
     $pane->type = 'block';
     $pane->subtype = 'ding_user_frontend-ding-user-loan-number';
@@ -602,8 +791,47 @@ søg',
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $display->content['new-17'] = $pane;
-    $display->panels['search-login'][3] = 'new-17';
+    $display->content['new-15'] = $pane;
+    $display->panels['search-login'][3] = 'new-15';
+    $pane = new stdClass();
+    $pane->pid = 'new-16';
+    $pane->panel = 'search-login';
+    $pane->type = 'block';
+    $pane->subtype = 'system-user-menu';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 3,
+              1 => 4,
+              2 => 5,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Bruger menu',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'grid-4-right',
+    );
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $display->content['new-16'] = $pane;
+    $display->panels['search-login'][4] = 'new-16';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -627,7 +855,7 @@ søg',
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'threecol_25_50_25';
+  $display->layout = 'two_4_12';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -642,10 +870,10 @@ søg',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-18';
-    $pane->panel = 'left';
+    $pane->pid = 'new-17';
+    $pane->panel = 'grid_12_right';
     $pane->type = 'block';
-    $pane->subtype = 'ting-ting_collection_types';
+    $pane->subtype = 'ding_availability-legend';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -659,33 +887,12 @@ søg',
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
-    $pane->locks = '';
-    $display->content['new-18'] = $pane;
-    $display->panels['left'][0] = 'new-18';
+    $pane->locks = array();
+    $display->content['new-17'] = $pane;
+    $display->panels['grid_12_right'][0] = 'new-17';
     $pane = new stdClass();
-    $pane->pid = 'new-19';
-    $pane->panel = 'left';
-    $pane->type = 'block';
-    $pane->subtype = 'ting-ting_object_types';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = '';
-    $display->content['new-19'] = $pane;
-    $display->panels['left'][1] = 'new-19';
-    $pane = new stdClass();
-    $pane->pid = 'new-20';
-    $pane->panel = 'middle';
+    $pane->pid = 'new-18';
+    $pane->panel = 'grid_12_right';
     $pane->type = 'ting_collection';
     $pane->subtype = 'ting_collection';
     $pane->shown = TRUE;
@@ -701,13 +908,13 @@ søg',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = '';
-    $display->content['new-20'] = $pane;
-    $display->panels['middle'][0] = 'new-20';
+    $display->content['new-18'] = $pane;
+    $display->panels['grid_12_right'][1] = 'new-18';
     $pane = new stdClass();
-    $pane->pid = 'new-21';
-    $pane->panel = 'right';
+    $pane->pid = 'new-19';
+    $pane->panel = 'grid_12_right';
     $pane->type = 'campaign';
     $pane->subtype = 'campaign';
     $pane->shown = TRUE;
@@ -730,12 +937,54 @@ søg',
     );
     $pane->css = array();
     $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = '';
+    $display->content['new-19'] = $pane;
+    $display->panels['grid_12_right'][2] = 'new-19';
+    $pane = new stdClass();
+    $pane->pid = 'new-20';
+    $pane->panel = 'grid_4_left';
+    $pane->type = 'block';
+    $pane->subtype = 'ting-ting_collection_types';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
     $pane->position = 0;
     $pane->locks = '';
+    $display->content['new-20'] = $pane;
+    $display->panels['grid_4_left'][0] = 'new-20';
+    $pane = new stdClass();
+    $pane->pid = 'new-21';
+    $pane->panel = 'grid_4_left';
+    $pane->type = 'block';
+    $pane->subtype = 'ting-ting_object_types';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = '';
     $display->content['new-21'] = $pane;
-    $display->panels['right'][0] = 'new-21';
+    $display->panels['grid_4_left'][1] = 'new-21';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-20';
+  $display->title_pane = 'new-18';
   $handler->conf['display'] = $display;
   $export['ting_collection_panel_context_1'] = $handler;
 
@@ -757,7 +1006,7 @@ søg',
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'threecol_25_50_25';
+  $display->layout = 'two_4_12';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -773,70 +1022,7 @@ søg',
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-22';
-    $pane->panel = 'left';
-    $pane->type = 'block';
-    $pane->subtype = 'ting-ting_collection_types';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = '';
-    $display->content['new-22'] = $pane;
-    $display->panels['left'][0] = 'new-22';
-    $pane = new stdClass();
-    $pane->pid = 'new-23';
-    $pane->panel = 'left';
-    $pane->type = 'block';
-    $pane->subtype = 'ting-ting_object_types';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = '';
-    $display->content['new-23'] = $pane;
-    $display->panels['left'][1] = 'new-23';
-    $pane = new stdClass();
-    $pane->pid = 'new-24';
-    $pane->panel = 'left';
-    $pane->type = 'block';
-    $pane->subtype = 'ting-ting_relation_anchors';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = '';
-    $display->content['new-24'] = $pane;
-    $display->panels['left'][2] = 'new-24';
-    $pane = new stdClass();
-    $pane->pid = 'new-25';
-    $pane->panel = 'middle';
+    $pane->panel = 'grid_12_right';
     $pane->type = 'ting_object';
     $pane->subtype = 'ting_object';
     $pane->shown = TRUE;
@@ -854,11 +1040,36 @@ søg',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = '';
-    $display->content['new-25'] = $pane;
-    $display->panels['middle'][0] = 'new-25';
+    $display->content['new-22'] = $pane;
+    $display->panels['grid_12_right'][0] = 'new-22';
     $pane = new stdClass();
-    $pane->pid = 'new-26';
-    $pane->panel = 'right';
+    $pane->pid = 'new-23';
+    $pane->panel = 'grid_12_right';
+    $pane->type = 'recommendation_list';
+    $pane->subtype = 'recommendation_list';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_ting_object_id_17',
+        1 => 'empty',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Andre med samme søgning lånte også:',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-23'] = $pane;
+    $display->panels['grid_12_right'][1] = 'new-23';
+    $pane = new stdClass();
+    $pane->pid = 'new-24';
+    $pane->panel = 'grid_12_right';
     $pane->type = 'campaign';
     $pane->subtype = 'campaign';
     $pane->shown = TRUE;
@@ -881,12 +1092,75 @@ søg',
     );
     $pane->css = array();
     $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = '';
+    $display->content['new-24'] = $pane;
+    $display->panels['grid_12_right'][2] = 'new-24';
+    $pane = new stdClass();
+    $pane->pid = 'new-25';
+    $pane->panel = 'grid_4_left';
+    $pane->type = 'block';
+    $pane->subtype = 'ting-ting_collection_types';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
     $pane->position = 0;
     $pane->locks = '';
+    $display->content['new-25'] = $pane;
+    $display->panels['grid_4_left'][0] = 'new-25';
+    $pane = new stdClass();
+    $pane->pid = 'new-26';
+    $pane->panel = 'grid_4_left';
+    $pane->type = 'block';
+    $pane->subtype = 'ting-ting_object_types';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = '';
     $display->content['new-26'] = $pane;
-    $display->panels['right'][0] = 'new-26';
+    $display->panels['grid_4_left'][1] = 'new-26';
+    $pane = new stdClass();
+    $pane->pid = 'new-27';
+    $pane->panel = 'grid_4_left';
+    $pane->type = 'block';
+    $pane->subtype = 'ting-ting_relation_anchors';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = '';
+    $display->content['new-27'] = $pane;
+    $display->panels['grid_4_left'][2] = 'new-27';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-25';
+  $display->title_pane = 'new-22';
   $handler->conf['display'] = $display;
   $export['ting_object_panel_context_1'] = $handler;
 
