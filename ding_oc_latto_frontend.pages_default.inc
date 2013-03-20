@@ -846,13 +846,15 @@ ting',
   $handler->handler = 'panel_context';
   $handler->weight = -1;
   $handler->conf = array(
-    'title' => 'Odense Panel',
-    'no_blocks' => 0,
+    'title' => 'Odense Ting Collection',
+    'no_blocks' => 1,
     'pipeline' => 'standard',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
   );
   $display = new panels_display();
   $display->layout = 'two_4_12';
