@@ -35,11 +35,11 @@ function ding_oc_latto_frontend_default_rules_configuration() {
       "ON" : [ "menu_rules_menu_link_change" ],
       "DO" : [
         { "cache_actions_action_clear_panels_pane_cache" : { "panes" : { "value" : {
-                "50bf11a45311a" : "50bf11a45311a",
-                "50bf11a45d23b" : "50bf11a45d23b",
-                "50bf11a46e048" : "50bf11a46e048",
-                "50bf11a4783d2" : "50bf11a4783d2",
-                "514181064dc49" : "514181064dc49",
+                "514ad6e87d7cf" : "514ad6e87d7cf",
+                "514ad70b6b2d0" : "514ad70b6b2d0",
+                "514ad714c68a7" : "514ad714c68a7",
+                "514ad71cd6022" : "514ad71cd6022",
+                "514ad7e82eeff" : "514ad7e82eeff",
                 "50e6de8f5cb22" : "50e6de8f5cb22"
               }
             }

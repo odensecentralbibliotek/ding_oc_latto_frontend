@@ -502,11 +502,20 @@ ting',
     $pane = new stdClass();
     $pane->pid = 'new-6';
     $pane->panel = 'footer';
-    $pane->type = 'block';
-    $pane->subtype = 'menu_block-6';
+    $pane->type = 'menu_tree';
+    $pane->subtype = 'menu-footer-menu-1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
+      'menu_name' => 'menu-footer-menu-1',
+      'parent_mlid' => 'menu-footer-menu-1:0',
+      'title_link' => 0,
+      'admin_title' => 'Tilbud fra biblioteket menu pane',
+      'level' => '1',
+      'follow' => 0,
+      'depth' => '1',
+      'expanded' => 0,
+      'sort' => 0,
       'override_title' => 0,
       'override_title_text' => '',
     );
@@ -515,7 +524,10 @@ ting',
       'settings' => array(
         'granularity' => 'none',
         'language' => 1,
-        'cache_key' => '50bf11a45311a',
+        'language_content' => 1,
+        'advanced' => array(),
+        'cache_key' => '514ad6e87d7cf',
+        'substitute' => 0,
         'new' => TRUE,
       ),
     );
@@ -534,11 +546,20 @@ ting',
     $pane = new stdClass();
     $pane->pid = 'new-7';
     $pane->panel = 'footer';
-    $pane->type = 'block';
-    $pane->subtype = 'menu_block-3';
+    $pane->type = 'menu_tree';
+    $pane->subtype = 'menu-footer-menu-2';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
+      'menu_name' => 'menu-footer-menu-2',
+      'parent_mlid' => 'menu-footer-menu-2:0',
+      'title_link' => 0,
+      'admin_title' => 'Netbiblioteket menu pane',
+      'level' => '1',
+      'follow' => 0,
+      'depth' => '1',
+      'expanded' => 0,
+      'sort' => 0,
       'override_title' => 0,
       'override_title_text' => '',
     );
@@ -547,7 +568,10 @@ ting',
       'settings' => array(
         'granularity' => 'none',
         'language' => 1,
-        'cache_key' => '50bf11a45d23b',
+        'language_content' => 1,
+        'advanced' => array(),
+        'cache_key' => '514ad70b6b2d0',
+        'substitute' => 0,
         'new' => TRUE,
       ),
     );
@@ -566,11 +590,20 @@ ting',
     $pane = new stdClass();
     $pane->pid = 'new-8';
     $pane->panel = 'footer';
-    $pane->type = 'block';
-    $pane->subtype = 'menu_block-5';
+    $pane->type = 'menu_tree';
+    $pane->subtype = 'menu-footer-menu-3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
+      'menu_name' => 'menu-footer-menu-3',
+      'parent_mlid' => 'menu-footer-menu-3:0',
+      'title_link' => 0,
+      'admin_title' => 'Om hjemmesiden menu pane',
+      'level' => '1',
+      'follow' => 0,
+      'depth' => '1',
+      'expanded' => 0,
+      'sort' => 0,
       'override_title' => 0,
       'override_title_text' => '',
     );
@@ -579,7 +612,10 @@ ting',
       'settings' => array(
         'granularity' => 'none',
         'language' => 1,
-        'cache_key' => '50bf11a46e048',
+        'language_content' => 1,
+        'advanced' => array(),
+        'cache_key' => '514ad714c68a7',
+        'substitute' => 0,
         'new' => TRUE,
       ),
     );
@@ -598,11 +634,20 @@ ting',
     $pane = new stdClass();
     $pane->pid = 'new-9';
     $pane->panel = 'footer';
-    $pane->type = 'block';
-    $pane->subtype = 'menu_block-4';
+    $pane->type = 'menu_tree';
+    $pane->subtype = 'menu-footer-menu-4';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
+      'menu_name' => 'menu-footer-menu-4',
+      'parent_mlid' => 'menu-footer-menu-4:0',
+      'title_link' => 0,
+      'admin_title' => 'Om biblioteket menu pane',
+      'level' => '1',
+      'follow' => 0,
+      'depth' => '1',
+      'expanded' => 0,
+      'sort' => 0,
       'override_title' => 0,
       'override_title_text' => '',
     );
@@ -611,7 +656,10 @@ ting',
       'settings' => array(
         'granularity' => 'none',
         'language' => 1,
-        'cache_key' => '50bf11a4783d2',
+        'language_content' => 1,
+        'advanced' => array(),
+        'cache_key' => '514ad71cd6022',
+        'substitute' => 0,
         'new' => TRUE,
       ),
     );
@@ -651,12 +699,21 @@ ting',
     $pane = new stdClass();
     $pane->pid = 'new-11';
     $pane->panel = 'header';
-    $pane->type = 'block';
-    $pane->subtype = 'menu_block-1';
+    $pane->type = 'menu_tree';
+    $pane->subtype = 'main-menu';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 1,
+      'menu_name' => 'main-menu',
+      'parent_mlid' => 'main-menu:0',
+      'title_link' => 0,
+      'admin_title' => 'Hovedmenu menu pane',
+      'level' => '1',
+      'follow' => 0,
+      'depth' => '1',
+      'expanded' => 0,
+      'sort' => 0,
+      'override_title' => 0,
       'override_title_text' => '',
     );
     $pane->cache = array(
@@ -666,7 +723,7 @@ ting',
         'language' => 1,
         'language_content' => 1,
         'advanced' => array(),
-        'cache_key' => '514181064dc49',
+        'cache_key' => '514ad7e82eeff',
         'substitute' => 0,
         'new' => TRUE,
       ),
