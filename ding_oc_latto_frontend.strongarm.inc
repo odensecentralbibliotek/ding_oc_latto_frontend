@@ -81,6 +81,7 @@ function ding_oc_latto_frontend_strongarm() {
     'load_scalefixjs' => 1,
     'load_equalize' => 1,
     'enable_exclude_css' => 0,
+    'favicon_mimetype' => 'image/vnd.microsoft.icon',
   );
   $export['theme_latto_odense_settings'] = $strongarm;
 
